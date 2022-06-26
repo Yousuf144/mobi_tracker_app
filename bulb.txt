@@ -1,0 +1,45 @@
+/**
+ * Sample React Native App
+ * https://github.com/facebook/react-native
+ *
+ * @format
+ * @flow strict-local
+ */
+
+import  React, { useState, useEffect } from 'react';
+
+import {
+
+  Text,
+Image,
+  View,
+  Button
+} from 'react-native';
+
+let App = () =>{
+  const [img,setimg] = useState('off')
+
+
+  return(
+
+ 
+<View >
+<Image  source={{uri:"https://i.pinimg.com/originals/1b/48/15/1b48159885cb515e26df4e18b72b97ef.gif"}}/>
+
+{(img == 'off')?
+<>
+<Image source={ require('./Assets/of.png')} />
+<Button title='Bulbs On' onPress={()=>setimg('on')}/>
+</>
+
+:
+<>
+<Image source={ require('./Assets/on.jpg')} />
+<Button title='Bulb Off' onPress={()=>setimg('off')}/>
+</>
+}
+</View>
+  )
+}
+
+export default App;
